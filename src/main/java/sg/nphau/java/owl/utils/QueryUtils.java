@@ -5,12 +5,9 @@
  */
 package sg.nphau.java.owl.utils;
 
-import com.google.gson.Gson;
 import org.apache.jena.query.*;
-import org.apache.jena.rdf.model.Literal;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.RDFNode;
-import org.apache.jena.rdf.model.Resource;
 
 public class QueryUtils {
     public static void execSelect(Model model, String queryString, Executor<ResultSet> executor) {

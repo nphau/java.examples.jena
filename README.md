@@ -24,6 +24,7 @@
 </p>
 
 ## 🤔 Apache Jena?
+
 <p align="left">
     <a href="https://jena.apache.org" target="_blank">
         <img src="docs/jena_logo.png" height="96">
@@ -68,8 +69,10 @@ https://jena.apache.org
   directly to disk
 - <a href="https://jena.apache.org/documentation/tools" target="_blank">Tools<a/> various command-line tools and
   utilities to help developers manage RDF data and other aspects of Jena
+- <a href="https://wiki.uib.no/info216/index.php/Java_Examples" target="_blank">Query Examples<a/>
 
 ## 🕸️ Scope of this ontology (VONT)
+
 <p align="left">
     <a href="https://jena.apache.org" target="_blank">
         <img src="docs/owl.png" height="96">
