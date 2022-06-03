@@ -10,10 +10,10 @@
     </parent>
     <groupId>sg.nphau.java</groupId>
     <artifactId>owl</artifactId>
-    <version>1.0</version>
+    <version>1.0.1</version>
     <packaging>war</packaging>
     <name>owl</name>
-    <description>This program contains all the Vehicles car manufacturers vehicle models of VINFAST and Toyota
+    <description>This program contains all the Vehicle cars manufacturers vehicle models of VINFAST and Toyota
     </description>
     <properties>
         <java.version>11</java.version>
@@ -42,9 +42,14 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-            <version>2.5.0</version>
+            <version>2.6.7</version>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
@@ -149,6 +154,11 @@
         <repository>
             <id>apache-releases-repo</id>
             <url>https://repository.apache.org/content/repositories/releases/</url>
+        </repository>
+        <repository>
+            <id>maven_central</id>
+            <name>Maven Central</name>
+            <url>https://repo.maven.apache.org/maven2/</url>
         </repository>
     </repositories>
 </project>
