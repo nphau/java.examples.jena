@@ -8,6 +8,7 @@ package sg.nphau.java.owl.data.repositories;
 import org.apache.jena.query.QuerySolution;
 import org.apache.jena.rdf.model.Model;
 import sg.nphau.java.owl.data.models.Car;
+import sg.nphau.java.owl.data.models.Engine;
 import sg.nphau.java.owl.ont.OntConfigs;
 import sg.nphau.java.owl.utils.Executor;
 import sg.nphau.java.owl.utils.QueryUtils;
@@ -37,30 +38,49 @@ public class CarsOwlUtils {
         return "SELECT ?" + rdfType + " ?Price ?MPG ?Year ?Seat" + " WHERE {" + " ?" + rdfType + " rdf:type owl:NamedIndividual." + " ?" + rdfType + " :hasPriceValue ?Price." + " ?" + rdfType + " :hasCombinedMPGValue ?MPG." + " ?" + rdfType + " :hasManufacturedYear ?Year." + " ?" + rdfType + " :hasSeatingValue ?Seat." + "}";
     }
 
-    public static Car extractModel(String filterType, QuerySolution querySolution) {
+    public static Car extractCarModel(String filterType, QuerySolution querySolution) {
         Car car = new Car();
         QueryUtils.execValue(querySolution, filterType, car::setName);
         QueryUtils.execValue(querySolution, "Price", v -> car.setPrice(Double.parseDouble(v)));
         QueryUtils.execValue(querySolution, "MPG", v -> car.setMpg(Integer.parseInt(v)));
         QueryUtils.execValue(querySolution, "Year", v -> car.setYear(Integer.parseInt(v)));
         QueryUtils.execValue(querySolution, "Seat", v -> car.setSeat(Integer.parseInt(v)));
-        QueryUtils.execValue(querySolution, "EngineCapacity", v -> car.setEngineCapacity(Integer.parseInt(v)));
-        QueryUtils.execValue(querySolution, "HorsePower", v -> car.setHorsePower(Integer.parseInt(v)));
         return car;
+    }
+
+    public static Engine extractEngineModel(String filterType, QuerySolution querySolution) {
+        Engine engine = new Engine();
+        QueryUtils.execValue(querySolution, filterType, engine::setName);
+        QueryUtils.execValue(querySolution, "EngineCapacity", v -> engine.setEngineCapacity(Integer.parseInt(v)));
+        QueryUtils.execValue(querySolution, "HorsePower", v -> engine.setHorsePower(Integer.parseInt(v)));
+        return engine;
     }
 
     public static String constructQuery(String queryString) {
         return BASE_QUERY + queryString;
     }
 
-    public static void execSelect(String queryString, String type, Executor<List<Car>> executor) {
+    public static void execSelectCar(String queryString, String type, Executor<List<Car>> executor) {
         ArrayList<Car> cars = new ArrayList<>();
         Model model = getModel();
         QueryUtils.execSelect(model, CarsOwlUtils.constructQuery(queryString), result -> {
             cars.clear();
             while (result.hasNext()) {
                 QuerySolution querySolution = result.nextSolution();
-                cars.add(CarsOwlUtils.extractModel(type, querySolution));
+                cars.add(CarsOwlUtils.extractCarModel(type, querySolution));
+            }
+            executor.execute(cars);
+        });
+    }
+
+    public static void execSelectEngine(String queryString, String type, Executor<List<Engine>> executor) {
+        ArrayList<Engine> cars = new ArrayList<>();
+        Model model = getModel();
+        QueryUtils.execSelect(model, CarsOwlUtils.constructQuery(queryString), result -> {
+            cars.clear();
+            while (result.hasNext()) {
+                QuerySolution querySolution = result.nextSolution();
+                cars.add(CarsOwlUtils.extractEngineModel(type, querySolution));
             }
             executor.execute(cars);
         });

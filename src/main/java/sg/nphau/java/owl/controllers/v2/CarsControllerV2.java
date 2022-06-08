@@ -9,13 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import sg.nphau.java.owl.controllers.BaseController;
 import sg.nphau.java.owl.data.models.BaseResponse;
 import sg.nphau.java.owl.data.models.Car;
+import sg.nphau.java.owl.data.models.Engine;
 import sg.nphau.java.owl.domain.v1.CarsRepositoryV1;
 import sg.nphau.java.owl.domain.v2.CarsRepositoryV2;
 
@@ -37,8 +35,8 @@ public class CarsControllerV2 extends BaseController {
     @Autowired
     private CarsRepositoryV1 carsRepositoryV1;
 
-    @GetMapping(value = "/" + VERSION + "/cars")
     @ResponseBody
+    @GetMapping(value = "/" + VERSION + "/cars")
     public BaseResponse<List<Car>> getCars(@RequestParam(name = "type", required = false) String type,
                                            @RequestParam(name = "price", required = false) String price,
                                            @RequestParam(name = "year", required = false) String year,
@@ -67,4 +65,17 @@ public class CarsControllerV2 extends BaseController {
         }
         return new BaseResponse<>("", Collections.emptyList());
     }
+
+    @ResponseBody
+    @GetMapping(value = "/" + VERSION + "/cars/engines")
+    public BaseResponse<List<Engine>> getEngines(@RequestParam(name = "type", required = false) String type) {
+        Future<BaseResponse<List<Engine>>> future = carsRepositoryV2.getEngines(type);
+        try {
+            return future.get();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new BaseResponse<>("", Collections.emptyList());
+    }
+
 }

@@ -8,6 +8,7 @@ package sg.nphau.java.owl.data.repositories.v2;
 import org.springframework.stereotype.Service;
 import sg.nphau.java.owl.data.models.BaseResponse;
 import sg.nphau.java.owl.data.models.Car;
+import sg.nphau.java.owl.data.models.Engine;
 import sg.nphau.java.owl.data.repositories.BaseCarRepository;
 import sg.nphau.java.owl.data.repositories.CarsOwlUtils;
 import sg.nphau.java.owl.domain.v2.CarsRepositoryV2;
@@ -25,8 +26,18 @@ public class CarsRepositoryV2Impl extends BaseCarRepository implements CarsRepos
     public Future<BaseResponse<List<Car>>> getCars(@Nullable String type) {
         String filterType = Utils.nullOrDefault(type, GET_ALL);
         CompletableFuture<BaseResponse<List<Car>>> completableFuture = new CompletableFuture<>();
-        String queryString = getQueryStringByType(type);
-        CarsOwlUtils.execSelect(queryString, filterType, result ->
+        String queryString = getCarQueryString(type);
+        CarsOwlUtils.execSelectCar(queryString, filterType, result ->
+                completableFuture.complete(new BaseResponse<>(queryString, result)));
+        return completableFuture;
+    }
+
+    @Override
+    public Future<BaseResponse<List<Engine>>> getEngines(@Nullable String type) {
+        String filterType = Utils.nullOrDefault(type, GET_ALL);
+        CompletableFuture<BaseResponse<List<Engine>>> completableFuture = new CompletableFuture<>();
+        String queryString = getEngineQueryString(type);
+        CarsOwlUtils.execSelectEngine(queryString, filterType, result ->
                 completableFuture.complete(new BaseResponse<>(queryString, result)));
         return completableFuture;
     }

@@ -10,7 +10,7 @@
     </parent>
     <groupId>sg.nphau.java</groupId>
     <artifactId>owl</artifactId>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
     <packaging>war</packaging>
     <name>owl</name>
     <description>This program contains all the Vehicle cars manufacturers vehicle models of VINFAST and Toyota
@@ -76,6 +76,21 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
             <version>${jpa.version}</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.springfox</groupId>-->
+<!--            <artifactId>springfox-swagger2</artifactId>-->
+<!--            <version>3.0.0</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>io.springfox</groupId>-->
+<!--            <artifactId>springfox-boot-starter</artifactId>-->
+<!--            <version>3.0.0</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>io.springfox</groupId>-->
+<!--            <artifactId>springfox-swagger-ui</artifactId>-->
+<!--            <version>2.9.2</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-war-plugin</artifactId>

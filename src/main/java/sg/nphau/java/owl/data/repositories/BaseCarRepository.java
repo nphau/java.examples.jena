@@ -11,16 +11,26 @@ import sg.nphau.java.owl.utils.Utils;
 import javax.annotation.Nullable;
 
 public abstract class BaseCarRepository {
-
     protected static final String GET_ALL = "all";
 
-    protected String getQueryStringByType(@Nullable String type) {
+    protected String getCarQueryString(@Nullable String type) {
         String filterType = Utils.nullOrDefault(type, GET_ALL);
         String queryString = CarsOwlUtils.getAllByType(filterType);
         if (PropertiesRepository.ENGINES.contains(filterType)) {
-            queryString = "SELECT ?" + filterType + " ?EngineCapacity ?HorsePower" + "WHERE {" + "?" + filterType + " rdf:type :" + filterType + "." + "?" + filterType + " :hasEngineCapacityValue ?EngineCapacity." + "?" + filterType + " :hasEngineHorsePowerValue ?HorsePower." + "}";
+            queryString = "SELECT ?" + filterType + " ?EngineCapacity ?HorsePower" + " WHERE {" + " ?" + filterType + " rdf:type :" + filterType + "." + " ?" + filterType + " :hasEngineCapacityValue ?EngineCapacity." + " ?" + filterType + " :hasEngineHorsePowerValue ?HorsePower." + "}";
         } else if (GET_ALL.equals(filterType)) {
             queryString = CarsOwlUtils.getAll(GET_ALL);
+        }
+        return queryString;
+    }
+
+    protected String getEngineQueryString(@Nullable String type) {
+        String filterType = Utils.nullOrDefault(type, GET_ALL);
+        String queryString = CarsOwlUtils.getAllByType(filterType);
+        if (PropertiesRepository.ENGINES.contains(filterType)) {
+            queryString = "SELECT ?" + filterType + " ?EngineCapacity ?HorsePower" + " WHERE {" + " ?" + filterType + " rdf:type :" + filterType + "." + " ?" + filterType + " :hasEngineCapacityValue ?EngineCapacity." + " ?" + filterType + " :hasEngineHorsePowerValue ?HorsePower." + "}";
+        } else if (GET_ALL.equals(filterType)) {
+            queryString = "SELECT ?" + filterType + " ?EngineCapacity ?HorsePower" + " WHERE {" + " ?" + filterType + " rdf:type owl:NamedIndividual. " + " ?" + filterType + " :hasEngineCapacityValue ?EngineCapacity." + " ?" + filterType + " :hasEngineHorsePowerValue ?HorsePower." + "}";
         }
         return queryString;
     }

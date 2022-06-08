@@ -1263,6 +1263,47 @@
     </owl:NamedIndividual>
     
 
+    <!-- http://www.semanticweb.org/isuru/ontologies/2020/10/toyota_vehicles#VINFAST_VFe34_2022 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isuru/ontologies/2020/10/toyota_vehicles#VINFAST_VFe34_2022">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isuru/ontologies/2020/10/toyota_vehicles#SUVs"/>
+        <hasEngine rdf:resource="http://www.semanticweb.org/isuru/ontologies/2020/10/toyota_vehicles#DOHC_V6_35L"/>
+        <hasCargoSpace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</hasCargoSpace>
+        <hasCombinedMPGValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">27</hasCombinedMPGValue>
+        <hasHightValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">69</hasHightValue>
+        <hasManufacturedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2022</hasManufacturedYear>
+        <hasMaxSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</hasMaxSpeed>
+        <hasPriceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36600</hasPriceValue>
+        <hasSeatingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hasSeatingValue>
+    </owl:NamedIndividual>
+
+    <!-- http://www.semanticweb.org/isuru/ontologies/2020/10/toyota_vehicles#VINFAST_VF8_2022 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isuru/ontologies/2020/10/toyota_vehicles#VINFAST_VF8_2022">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isuru/ontologies/2020/10/toyota_vehicles#SUVs"/>
+        <hasEngine rdf:resource="http://www.semanticweb.org/isuru/ontologies/2020/10/toyota_vehicles#DOHC_V6_35L"/>
+        <hasCargoSpace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</hasCargoSpace>
+        <hasCombinedMPGValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">27</hasCombinedMPGValue>
+        <hasHightValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">69</hasHightValue>
+        <hasManufacturedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2022</hasManufacturedYear>
+        <hasMaxSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</hasMaxSpeed>
+        <hasPriceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36600</hasPriceValue>
+        <hasSeatingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasSeatingValue>
+    </owl:NamedIndividual>
+
+    <!-- http://www.semanticweb.org/isuru/ontologies/2020/10/toyota_vehicles#VINFAST_VF9_2022 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isuru/ontologies/2020/10/toyota_vehicles#VINFAST_VF9_2022">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isuru/ontologies/2020/10/toyota_vehicles#SUVs"/>
+        <hasEngine rdf:resource="http://www.semanticweb.org/isuru/ontologies/2020/10/toyota_vehicles#DOHC_V6_35L"/>
+        <hasCargoSpace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</hasCargoSpace>
+        <hasCombinedMPGValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">27</hasCombinedMPGValue>
+        <hasHightValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">69</hasHightValue>
+        <hasManufacturedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2022</hasManufacturedYear>
+        <hasMaxSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</hasMaxSpeed>
+        <hasPriceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36600</hasPriceValue>
+        <hasSeatingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hasSeatingValue>
+    </owl:NamedIndividual>
 
     <!-- http://www.semanticweb.org/isuru/ontologies/2020/10/toyota_vehicles#HybridMotor -->
 
@@ -1673,9 +1714,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/isuru/ontologies/2020/10/toyota_vehicles#86_2020 -->
+    <!-- http://www.semanticweb.org/isuru/ontologies/2020/10/toyota_vehicles#DOHC86_2020 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isuru/ontologies/2020/10/toyota_vehicles#86_2020">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isuru/ontologies/2020/10/toyota_vehicles#DOHC86_2020">
         <rdf:type rdf:resource="http://www.semanticweb.org/isuru/ontologies/2020/10/toyota_vehicles#Cars"/>
         <hasEngine rdf:resource="http://www.semanticweb.org/isuru/ontologies/2020/10/toyota_vehicles#DOHC_4_2L"/>
         <hasCargoSpace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasCargoSpace>

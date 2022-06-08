@@ -13,9 +13,6 @@ public class Car {
     private int seat;
     private int mpg;
 
-    private int engineCapacity;
-    private int horsePower;
-
     public Car() {
     }
 
@@ -51,11 +48,4 @@ public class Car {
         this.mpg = mpg;
     }
 
-    public void setEngineCapacity(int engineCapacity) {
-        this.engineCapacity = engineCapacity;
-    }
-
-    public void setHorsePower(int horsePower) {
-        this.horsePower = horsePower;
-    }
 }

@@ -71,9 +71,9 @@ public class CarsRepositoryV1Impl extends BaseCarRepository implements CarsRepos
     @Override
     public Future<List<Car>> getCars(@Nullable String type) {
         String filterType = Utils.nullOrDefault(type, GET_ALL);
-        String queryString = getQueryStringByType(type);
+        String queryString = getCarQueryString(type);
         CompletableFuture<List<Car>> completableFuture = new CompletableFuture<>();
-        CarsOwlUtils.execSelect(queryString, filterType, completableFuture::complete);
+        CarsOwlUtils.execSelectCar(queryString, filterType, completableFuture::complete);
         return completableFuture;
     }
 

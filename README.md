@@ -110,11 +110,11 @@ git clone git@github.com:nphau/java.ontology.owl.git
 
 ## 🍔 Demo
 
-| API  | Description
-|---|---|
-|getEngines|```https://carowl.herokuapp.com/cars/engines```|
-|getCategories|```https://carowl.herokuapp.com/cars/categories```|
-|getCars|```http://carowl.herokuapp.com/cars```|
+| API  | Description                                        
+|---|----------------------------------------------------|
+|getEngines| ```https://carowl.herokuapp.com/v2/cars/engines``` |
+|getCategories| ```https://carowl.herokuapp.com/v2/cars/categories``` |
+|getCars| ```http://carowl.herokuapp.com/v2/cars```             |
 
 ```json
   [
