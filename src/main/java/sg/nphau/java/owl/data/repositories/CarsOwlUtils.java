@@ -21,10 +21,12 @@ public class CarsOwlUtils {
     private static final String PATH = OntConfigs.VEHICLES.path;
     private static final String BASE_QUERY = OntConfigs.VEHICLES.baseQuery;
 
-    private static final Model model;
+    private static Model model = null;
 
-    static {
-        model = Utils.getModel(PATH);
+    private static Model getModel() {
+        if (model == null)
+            model = Utils.getModel(PATH);
+        return model;
     }
 
     public static String getAllByType(String rdfType) {
@@ -53,6 +55,7 @@ public class CarsOwlUtils {
 
     public static void execSelect(String queryString, String type, Executor<List<Car>> executor) {
         ArrayList<Car> cars = new ArrayList<>();
+        Model model = getModel();
         QueryUtils.execSelect(model, CarsOwlUtils.constructQuery(queryString), result -> {
             cars.clear();
             while (result.hasNext()) {

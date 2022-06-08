@@ -10,7 +10,7 @@
     </parent>
     <groupId>sg.nphau.java</groupId>
     <artifactId>owl</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.6</version>
     <packaging>war</packaging>
     <name>owl</name>
     <description>This program contains all the Vehicle cars manufacturers vehicle models of VINFAST and Toyota
@@ -18,11 +18,10 @@
     <properties>
         <java.version>11</java.version>
         <jdk.version>1.8</jdk.version>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jena.version>4.4.0</jena.version>
-        <arq.version>4.5.0</arq.version>
+        <jena.version>4.2.0</jena.version>
         <poi.version>5.2.2</poi.version>
         <log4j.version>1.2.17</log4j.version>
         <slf4j.version>1.7.36</slf4j.version>
@@ -66,11 +65,6 @@
             <groupId>org.apache.jena</groupId>
             <artifactId>jena-text</artifactId>
             <version>${jena.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.jena</groupId>
-            <artifactId>jena-arq</artifactId>
-            <version>${arq.version}</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
