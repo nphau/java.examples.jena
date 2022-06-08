@@ -10,7 +10,7 @@
     </parent>
     <groupId>sg.nphau.java</groupId>
     <artifactId>owl</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.3</version>
     <packaging>war</packaging>
     <name>owl</name>
     <description>This program contains all the Vehicle cars manufacturers vehicle models of VINFAST and Toyota

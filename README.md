@@ -98,6 +98,38 @@ various domains: the nouns representing classes of objects and the verbs represe
     </a>
 </p>
 
+## 💀 Installation
+
+1. Clone the git repository
+
+```
+git clone git@github.com:nphau/java.ontology.owl.git
+```
+
+2. <a href="https://www.jetbrains.com/idea" target="_blank"> Open with IntelliJ IDEA </a>
+
+## 🍔 Demo
+
+| API  | Description
+|---|---|
+|getEngines|```https://carowl.herokuapp.com/cars/engines```|
+|getCategories|```https://carowl.herokuapp.com/cars/categories```|
+|getCars|```http://carowl.herokuapp.com/cars```|
+
+```json
+  [
+    {
+      "name": "Tundra_2021",
+      "price": 34575,
+      "year": 2021,
+      "seat": 0,
+      "mpg": 18,
+      "engineCapacity": 6,
+      "horsePower": 345
+    }
+  ]
+```
+
 ## ✨ Contributing
 
 Please feel free to contact me or make a pull request.
