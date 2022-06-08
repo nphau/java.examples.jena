@@ -14,6 +14,7 @@ import sg.nphau.java.owl.controllers.BaseController;
 import sg.nphau.java.owl.data.models.BaseResponse;
 import sg.nphau.java.owl.data.models.Car;
 import sg.nphau.java.owl.data.models.Engine;
+import sg.nphau.java.owl.domain.PropertiesRepository;
 import sg.nphau.java.owl.domain.v1.CarsRepositoryV1;
 import sg.nphau.java.owl.domain.v2.CarsRepositoryV2;
 
@@ -78,4 +79,13 @@ public class CarsControllerV2 extends BaseController {
         return new BaseResponse<>("", Collections.emptyList());
     }
 
+    @GetMapping(value = "/" + VERSION + "/common/categories")
+    public List<String> getCategories() {
+        return PropertiesRepository.CATEGORIES;
+    }
+
+    @GetMapping(value = "/" + VERSION + "/common/engines")
+    public List<String> getEngines() {
+        return PropertiesRepository.ENGINES;
+    }
 }
